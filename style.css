@@ -75,12 +75,7 @@ background: var(--aside);
 .leng {
     padding: 10px;
 }
-.logo2s{
-    display: flex;
-    justify-items: center;
-    height: 100px;
-    width: 100px;
-}
+
 main{
     list-style: none;
     padding-left: 30px;
@@ -192,28 +187,39 @@ select{
 
 
 /* Media Query para móviles */
-@media (max-width: 768px) {
-    .main-nav {
-        justify-content: space-between;
-        position: relative;
-    }
+@media screen and (max-width: 768px) {
+  .cabecera {
+    padding: 10px;
+    font-size: small;
+    text-align: center;
+  }
 
-    .nav-list {
-        display: none; /* Se oculta la lista por defecto en móvil */
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--color-secondary);
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      "cabecera"
+      "contacto"
+      "apt"
+      "main"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+  }
 
-    .nav-list.open {
-        display: flex; /* Se muestra al tener la clase .open */
-    }
+  aside {
+    opacity: 0; /* Opcional: mostrar el contacto en móviles */
+    margin-top: 10px;
+  }
 
-    .hamburger-menu {
-        display: block; /* Se muestra el icono de hamburguesa */
-    }
+  main, #apt {
+    padding-left: 10px;
+  }
+
+  .logo {
+    margin: 0 ;
+  }
+
+  footer {
+    text-align: center;
+  }
 }
