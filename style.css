@@ -1,0 +1,219 @@
+/*Aquí creamos variables de color y luego las llamamos dentro de las clases. Es mucho más ordenado. */
+:root{
+    --brand:rgb(232, 227, 227); 
+    --brand-2:blue;
+    --ink: rgb(27, 81, 102);
+    --muted: gray;
+    --bg: white;
+    --panel: white;
+    --border: rgba(87, 199, 133, 1);
+    --ok: green;
+    --bad: red;
+    --focus: blue;
+    --degradado: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+    --aside:linear-gradient(90deg, rgba(42, 123, 155, 0.505) 0%, rgba(87, 199, 134, 0.516) 50%, rgba(237, 221, 83, 0.473) 100%);
+    --font: white;
+    --button:rgb(166, 237, 196);
+}
+/* para llamarlo ponemos var(--brand) y aparecerá el color de brand que seleccionamos en root*/
+
+.cabecera{
+    background: var(--degradado);
+    width: 100%;
+    color: var(--font);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0px;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-areas:
+    "cabecera cabecera cabecera"
+    "contacto apt apt"
+    "contacto main main"
+    "contacto main main"
+    "footer footer footer";
+    grid-template-columns: 240px 1fr 220px;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+a{
+    text-decoration: none;
+    color: var(--ink);
+    font-weight: bolder;
+}
+#apt {grid-area:apt;
+    opacity: 0;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-name: slidein;
+    animation-play-state:paused;
+    padding-left: 30px;
+}
+.cabecera{grid-area:cabecera;}
+.presentacion{
+    text-align: center; 
+    font-size: medium;
+    color: var(--ink);
+    font-weight: bold;
+}
+aside{grid-area:contacto;
+opacity:0;
+border:0.5px solid;
+border-radius: 10px;
+border-color: var(--border);
+background: var(--aside); 
+}
+.logo{
+    display: flex;
+    justify-items: center;
+    height: 70px;
+    width: 70px;
+    
+}
+.leng {
+    padding: 10px;
+}
+.logo2s{
+    display: flex;
+    justify-items: center;
+    height: 100px;
+    width: 100px;
+}
+main{
+    list-style: none;
+    padding-left: 30px;
+    grid-area: main;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-name: slidein;
+    animation-play-state:paused;
+   
+   
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+footer{grid-area: footer;
+
+border-radius: 10px;
+ 
+text-align: end;
+font-weight: bolder;
+padding:20px;}
+#formacion{
+    opacity: 0;
+    
+}
+
+.Centro{
+font-weight: bold;
+color:var(--ink);
+}
+.descripcion{
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.periodo{
+font-size: small;
+font-weight: bold;
+}
+#experiencia{
+opacity: 0;
+}
+#enlaces{
+opacity: 0;
+}
+#fecha{
+opacity: 0;
+}
+#valorar{
+opacity: 0;
+}
+
+.animacion {
+  width: 150px;
+  height: auto;
+  
+  position: relative;
+  animation-name: myAnimation;
+  animation-duration: 4s;  
+  animation-fill-mode: forwards;
+  margin-left:100px;
+  animation-play-state:paused;
+}
+
+
+fieldset{
+    border-radius: 10px;
+    border-color: var(--border);
+    background-color: var(--degradado); 
+}
+legend{
+    font-size: medium;
+    color: var(--ink);
+    font-weight: bold;
+}
+input, textarea{
+    border-color: var(--border);
+    border-radius: 10px ;
+}
+label, small{
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--ink);
+}
+option,#nombre,#apellido,#correo,#contraseña,#telefono,#mensaje{
+    font-size: small;
+    color: var(--ink);
+    font-weight: bold;
+}
+
+button{
+    background-color: var(--button);
+    border-color: var(--border);
+    border-radius: 10px;
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+}
+select{
+    border-color: var(--border);
+    border-radius: 10px ;
+    color: var(--ink);
+}
+
+
+/* Media Query para móviles */
+@media (max-width: 768px) {
+    .main-nav {
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .nav-list {
+        display: none; /* Se oculta la lista por defecto en móvil */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-secondary);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .nav-list.open {
+        display: flex; /* Se muestra al tener la clase .open */
+    }
+
+    .hamburger-menu {
+        display: block; /* Se muestra el icono de hamburguesa */
+    }
+}
