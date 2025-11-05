@@ -65,12 +65,24 @@ border-radius: 10px;
 border-color: var(--border);
 background: var(--aside); 
 }
+
+.foto{
+  margin-left: 3.5rem;
+  height: 200px;
+  width: 120px;
+ 
+}
 .logo{
     display: flex;
     justify-items: center;
     height: 70px;
     width: 70px;
     
+}
+
+.leng:hover{
+  transform: scale(1.1);
+  
 }
 .leng {
     padding: 10px;
@@ -112,11 +124,12 @@ padding:20px;}
 }
 
 .Centro{
-font-weight: bold;
-color:var(--ink);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .descripcion{
-font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-weight: bold;
+color:var(--ink);
+
 }
 .periodo{
 font-size: small;
@@ -146,6 +159,7 @@ opacity: 0;
   margin-left:100px;
   animation-play-state:paused;
 }
+
 
 
 fieldset{
